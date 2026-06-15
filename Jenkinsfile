@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker { 
+            image 'node:20-alpine' // Jenkins automatically pulls and handles this container
+        }
+    }
     stages {
       
    
