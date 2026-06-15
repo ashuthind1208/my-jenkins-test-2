@@ -1,13 +1,8 @@
 pipeline {
-    agent {
-        docker { 
-            image 'node:20-alpine' // Jenkins automatically pulls and handles this container
-        }
-    }
+    agent any
+    
     stages {
-      
-   
-        stage('Build Docker Image') {
+      stage('Build Docker Image') {
             steps {
                 // Verify docker is accessible
                 sh 'docker --version'
