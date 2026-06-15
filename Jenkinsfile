@@ -4,6 +4,7 @@ pipeline {
       
         stage('Checkout') {
             steps {
+                cleanWs() // Deletes the entire directory contents so Git starts fresh
                 // Use this native step—it handles the "not in a git directory" issue automatically
                 git url: 'https://github.com/ashuthind1208/my-jenkins-test.git', branch: 'main'
             }
